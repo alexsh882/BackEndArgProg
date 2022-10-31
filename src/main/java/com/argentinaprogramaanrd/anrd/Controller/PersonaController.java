@@ -27,7 +27,8 @@ import org.springframework.http.ResponseEntity;
  * @author operador
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontendargprog-befe5.web.app")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
 
     @Autowired
