@@ -14,7 +14,9 @@
     <name>anrd</name>
     <description>Portfolio Ruiz Diaz Alejandro</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>11</java.version> 
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -43,9 +45,7 @@
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
-            <scope>provided</scope>            
+            <artifactId>lombok</artifactId>  
             <optional>true</optional>
         </dependency>
         <dependency>
