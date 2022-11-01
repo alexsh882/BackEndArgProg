@@ -32,13 +32,14 @@ public class ProyectoController {
     @Autowired
     ProyectoService proyectoService;
 
-    @GetMapping("/proyectos")
+    
+    @GetMapping("proyectos")
     public ResponseEntity<List<Proyecto>> index() {
         List<Proyecto> list = proyectoService.index();
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    @PostMapping("/proyectos")
+    @PostMapping("proyectos")
     public ResponseEntity<?> store(@RequestBody Proyecto proyecto) {
         if (StringUtils.isBlank(proyecto.getTitle())) {
             return new ResponseEntity(new Message("El titulo del proyecto es obligatorio."), HttpStatus.BAD_REQUEST);
@@ -53,7 +54,7 @@ public class ProyectoController {
         return new ResponseEntity(new Message("Proyecto creado correctamente."), HttpStatus.OK);
     }
 
-    @PutMapping("/proyectos/{id}/update")
+    @PutMapping("proyectos/{id}/update")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody Proyecto proyecto) {
 
         if (StringUtils.isBlank(proyecto.getTitle())) {
@@ -78,7 +79,7 @@ public class ProyectoController {
 
     }
 
-    @DeleteMapping("/proyectos/{id}/delete")
+    @DeleteMapping("proyectos/{id}/delete")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         if (!proyectoService.existsById(id)) {
             return new ResponseEntity(new Message("No existe el Proyecto que busca"), HttpStatus.NOT_FOUND);

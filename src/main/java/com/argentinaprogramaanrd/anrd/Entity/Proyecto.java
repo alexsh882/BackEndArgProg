@@ -4,11 +4,13 @@
  */
 package com.argentinaprogramaanrd.anrd.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import org.springframework.lang.Nullable;
 
 /**
  *
@@ -26,11 +28,15 @@ public class Proyecto {
 
     @NotNull
     private String url;
+    
     @NotNull
     private String dateFrom;
+    
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String description;
 
+   @Nullable
     private String image;
 
     public Proyecto() {
@@ -73,8 +79,8 @@ public class Proyecto {
         return description;
     }
 
-    public void setDescription(String decription) {
-        this.description = decription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getImage() {
