@@ -73,12 +73,12 @@ public class HaSController {
             return new ResponseEntity(new Message("El porcentaje de H and S es obligatorio."), HttpStatus.BAD_REQUEST);
         }
 
-        HaS educacion_original = hasService.show(id).get();
+        HaS has_original = hasService.show(id).get();
 
-        educacion_original.setName(has.getName());
-        educacion_original.setPorcentaje(has.getPorcentaje());
+        has_original.setName(has.getName());
+        has_original.setPorcentaje(has.getPorcentaje());
 
-        hasService.save(educacion_original);
+        hasService.save(has_original);
         return new ResponseEntity(new Message("H and S guardada correctamente."), HttpStatus.OK);
 
     }
