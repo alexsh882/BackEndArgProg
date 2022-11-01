@@ -59,8 +59,6 @@ public class Main extends WebSecurityConfigurerAdapter {
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        System.out.println("com.argentinaprogramaanrd.anrd.Security.Main.configure(HttpSecurity)");
-
         http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 

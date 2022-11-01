@@ -26,8 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author operador
  */
 @RestController
-@CrossOrigin(origins = "https://frontendargprog-befe5.web.app")
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"https://frontendargprog-befe5.web.app", "http://localhost:4200"})
 public class HaSController {
 
     @Autowired

@@ -10,12 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.argentinaprogramaanrd.anrd.Repository.PersonaRepository;
 import java.util.Optional;
+import javax.transaction.Transactional;
 
 /**
  *
  * @author operador
  */
 @Service
+@Transactional
 public class PersonaService {
 
     @Autowired

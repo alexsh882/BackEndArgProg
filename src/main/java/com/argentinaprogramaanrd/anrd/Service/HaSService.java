@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
  *
  * @author operador
  */
-@Transactional
 @Service
+@Transactional
 public class HaSService {
 
     @Autowired

@@ -27,8 +27,7 @@ import org.springframework.http.ResponseEntity;
  * @author operador
  */
 @RestController
-@CrossOrigin(origins = "https://frontendargprog-befe5.web.app")
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"https://frontendargprog-befe5.web.app", "http://localhost:4200"})
 public class PersonaController {
 
     @Autowired
@@ -76,7 +75,7 @@ public class PersonaController {
     }
 
     //@PreAuthorize("hasRole('ADMIN')")
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @PutMapping("personas/{id}/update")
     public ResponseEntity<?> update(@PathVariable int id, @RequestBody Persona persona) {
 
@@ -108,7 +107,7 @@ public class PersonaController {
         old_persona.setImage(persona.getImage());
 
         iPersonaService.save(old_persona);
-        return new ResponseEntity(new Message("Persona creada correctamente."), HttpStatus.OK);
+        return new ResponseEntity(new Message("Persona actualizada correctamente."), HttpStatus.OK);
 
     }
 

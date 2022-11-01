@@ -5,6 +5,7 @@
 package com.argentinaprogramaanrd.anrd.Repository;
 
 import com.argentinaprogramaanrd.anrd.Entity.Persona;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +16,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PersonaRepository extends JpaRepository<Persona , Integer> {
-   
+   public Optional<Persona> findByName(String name);
+   public boolean existsByName(String name);
 }
